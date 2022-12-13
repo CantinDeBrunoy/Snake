@@ -11,8 +11,6 @@ import javax.swing.JPanel;
 import Models.Carte;
 
 public class PanelScore extends JPanel {
-
-	private int scoreJoueur;
 	
 	private JLabel labelScore;
 	
@@ -24,9 +22,8 @@ public class PanelScore extends JPanel {
 	
 	private Carte carte;
 	
-	public PanelScore(int scoreJoueur, Carte carte, int hauteur, int largeur) {
+	public PanelScore(Carte carte, int hauteur, int largeur) {
 		super();
-		this.scoreJoueur = scoreJoueur;
 		this.setPreferredSize(new Dimension(hauteur,largeur));
 		this.setMinimumSize(new Dimension(hauteur,largeur));
 		this.carte = carte;
@@ -39,7 +36,7 @@ public class PanelScore extends JPanel {
 		g2.setColor(Color.darkGray);
 		g2.fillRect(0, 0, 500, 200);
 		
-		this.labelScore = new JLabel("Votre score : " + scoreJoueur);
+		this.labelScore = new JLabel("Votre score : " + Jeu.LancerPartie.scoreJoueur);
 		this.labelScore.setForeground(Color.white);
 		this.labelScore.setBounds(40,10,400,50);
 		this.add(labelScore);
@@ -54,7 +51,7 @@ public class PanelScore extends JPanel {
 		this.labelBombe.setBounds(40,140,400,50);
 		this.add(labelBombe);
 		
-		this.labelNiveau = new JLabel("Niveau : " + Jeu.LancerPartie.indexNiveau);
+		this.labelNiveau = new JLabel("Niveau : " + (Jeu.LancerPartie.indexNiveau - 1));
 		this.labelNiveau.setForeground(Color.white);
 		this.labelNiveau.setBounds(400,140,400,50);
 		this.add(labelNiveau);

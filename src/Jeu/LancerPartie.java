@@ -32,7 +32,7 @@ public class LancerPartie {
 		this.fenetre = new Frame();
 		this.fenetre.addKeyListener(new InputJoueur(serpent));
 		
-		this.panelScore = new PanelScore(scoreJoueur, carte, 500, 200);
+		this.panelScore = new PanelScore(carte, 500, 200);
 		this.panelScore.setBounds(0,0,500,200);
 		this.panelScore.setLayout(new BorderLayout());
 		this.fenetre.add(panelScore);
@@ -42,8 +42,8 @@ public class LancerPartie {
 		this.panelJeu.setLayout(new BorderLayout());
 		this.fenetre.add(panelJeu);
 		
-		this.indexNiveau = 1;
-		this.scoreJoueur = 0;
+		indexNiveau = 1;
+		scoreJoueur = 0;
 	}
 
 	public void nouvellePartie() throws InterruptedException {
@@ -71,7 +71,7 @@ public class LancerPartie {
 			}
 			carte.actualiserMatrice(indexNiveau, this.serpent);
 			carte.setCase(arriereSerpent);
-			//carte.afficherMatrice();
+			carte.afficherMatrice();
 			panelJeu.repaint();
 			panelScore.repaint();
 			
@@ -79,7 +79,7 @@ public class LancerPartie {
 				finPartie();
 				return;
 			}
-			Thread.sleep(125-this.indexNiveau*6);
+			Thread.sleep(serpent.getVitesse()-indexNiveau*6);
 		}
 	}
 

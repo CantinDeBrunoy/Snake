@@ -6,6 +6,8 @@ public class Serpent extends Case{
 	
 	private ElementSerpent elementSerpent;
 	
+	private int vitesse = 125;
+	
 	private Carte carte;
 	
 	public int direction=0;
@@ -108,5 +110,13 @@ public class Serpent extends Case{
 
 	public void setArriereSerpent(Case arriereSerpent) {
 		this.arriereSerpent = arriereSerpent;
+	}
+
+	public int getVitesse() {
+		return vitesse;
+	}
+
+	public void setVitesse(int vitesse) {
+		this.vitesse = vitesse;
 	}
 }

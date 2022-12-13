@@ -37,10 +37,36 @@ public class Carte {
 		if(this.nombrePommes==0) {
 			Jeu.LancerPartie.indexNiveau+=1;
 			//System.out.println("Ajout pommes");
+			ajoutBonus();
 			ajoutPommes(indexNiveau);
 			ajoutBombes(indexNiveau);			
 		}
 		return this.matrice;
+	}
+
+	private void ajoutBonus() {
+		int alea = (int)(Math.random() * 100);
+		if(alea < 100) {
+			System.out.println("Spawn bonus");
+			ajoutRalentisseur();
+		}
+	}
+
+	private void ajoutRalentisseur() {
+		boolean estAjoute = false;
+		while(!estAjoute) {
+			int randomHauteur = (int)(Math.random() * this.hauteur);
+			int randomLargeur = (int)(Math.random() * this.largeur);
+			//System.out.println(randomHauteur);
+			//System.out.println(randomLargeur);
+			
+			if(this.matrice[randomHauteur][randomLargeur].getValeur() == 0) {
+				this.matrice[randomHauteur][randomLargeur] = new Ralentisseur(randomHauteur,randomLargeur);
+				estAjoute = true;
+			} else {
+				//System.out.println("Case " + randomHauteur + ":" + randomLargeur + " deja occupee");
+			}
+		}		
 	}
 
 	public void ajoutPommes(int indexNiveau) {

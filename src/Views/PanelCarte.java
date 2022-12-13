@@ -39,13 +39,15 @@ public class PanelCarte extends JPanel{
 				else if(this.carte.matrice[i][j].getValeur()==2) {
 					g2.setColor(new Color(23, 86, 104));
 				}
-				else {
+				else if(this.carte.matrice[i][j].getValeur()==3) {
 					g2.setColor(new Color(236, 23, 43));
+				}
+				else {
+					g2.setColor(new Color(181, 21, 121));
 				}
 				g2.fillRect(j*20, i*20, j*20+20, i*20+20);
 			}
 			
 		}
-	}
-	
+	}	
 }
