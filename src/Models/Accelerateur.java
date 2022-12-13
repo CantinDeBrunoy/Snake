@@ -1,9 +1,9 @@
 package Models;
 
-public class Sol extends Case  {
-	
-	public Sol(int coordHauteur,int coordLargeur) {
-		super(0, "Sol",coordHauteur,coordLargeur);
+public class Accelerateur extends Case{
+
+	protected Accelerateur(int coordHauteur, int coordLargeur) {
+		super(5, "Accelerateur", coordHauteur, coordLargeur);
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class Sol extends Case  {
 
 	@Override
 	public void Collision(Serpent s) {
-		// TODO Auto-generated method stub
-		
+		s.setVitesse((s.getVitesse()/2)+(s.getVitesse()/3));
 	}
+
 }

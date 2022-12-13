@@ -37,31 +37,60 @@ public class Carte {
 		if(this.nombrePommes==0) {
 			Jeu.LancerPartie.indexNiveau+=1;
 			//System.out.println("Ajout pommes");
-			ajoutBonus();
+			selectionBonus();
 			ajoutPommes(indexNiveau);
 			ajoutBombes(indexNiveau);			
 		}
 		return this.matrice;
 	}
 
-	private void ajoutBonus() {
+	private void selectionBonus() {
 		int alea = (int)(Math.random() * 100);
-		if(alea < 100) {
-			System.out.println("Spawn bonus");
-			ajoutRalentisseur();
+		if(alea <= 100 && alea > 90) {
+			ajoutBonus(4);
+		}
+		else if(alea <= 90 && alea >= 75) {
+			ajoutBonus(5);
+		}
+		else if(alea < 5) {
+			ajoutBonus(6);
 		}
 	}
 
-	private void ajoutRalentisseur() {
+	private void ajoutBonus(int typeBonus) {
 		boolean estAjoute = false;
 		while(!estAjoute) {
 			int randomHauteur = (int)(Math.random() * this.hauteur);
 			int randomLargeur = (int)(Math.random() * this.largeur);
+			if(typeBonus == 6) {
+				randomHauteur = (int)(Math.random() *(this.hauteur-1 - 1))+1;
+				randomLargeur = (int)(Math.random() *(this.largeur-1 - 1))+1;
+			}
 			//System.out.println(randomHauteur);
 			//System.out.println(randomLargeur);
 			
 			if(this.matrice[randomHauteur][randomLargeur].getValeur() == 0) {
-				this.matrice[randomHauteur][randomLargeur] = new Ralentisseur(randomHauteur,randomLargeur);
+				if(typeBonus == 4) {
+					this.matrice[randomHauteur][randomLargeur] = new Ralentisseur(randomHauteur,randomLargeur);
+				}
+				else if(typeBonus == 5) {
+					this.matrice[randomHauteur][randomLargeur] = new Accelerateur(randomHauteur,randomLargeur);
+				}
+				else if(typeBonus == 6) {
+					boolean fosseTrouve = false;
+					while(!fosseTrouve) {
+						if(this.matrice[randomHauteur+1][randomLargeur].getValeur()==0 && 
+								this.matrice[randomHauteur][randomLargeur+1].getValeur()==0 &&
+								this.matrice[randomHauteur-1][randomLargeur].getValeur()==0 &&
+								this.matrice[randomHauteur][randomLargeur-1].getValeur()==0)
+						this.matrice[randomHauteur][randomLargeur] = new Fosse(randomHauteur,randomLargeur);
+						this.matrice[randomHauteur+1][randomLargeur] = new Fosse(randomHauteur+1,randomLargeur); 
+						this.matrice[randomHauteur][randomLargeur+1] = new Fosse(randomHauteur,randomLargeur+1);
+						this.matrice[randomHauteur-1][randomLargeur] = new Fosse(randomHauteur-1,randomLargeur);
+						this.matrice[randomHauteur][randomLargeur-1] = new Fosse(randomHauteur,randomLargeur-1);
+						fosseTrouve = true;
+					}
+				}
 				estAjoute = true;
 			} else {
 				//System.out.println("Case " + randomHauteur + ":" + randomLargeur + " deja occupee");

@@ -35,6 +35,12 @@ public class PanelScore extends JPanel {
 		
 		g2.setColor(Color.darkGray);
 		g2.fillRect(0, 0, 500, 200);
+		if(this.labelScore != null) {
+			this.remove(this.labelScore);
+			this.remove(this.labelBombe);
+			this.remove(this.labelPomme);
+			this.remove(this.labelNiveau);
+		}
 		
 		this.labelScore = new JLabel("Votre score : " + Jeu.LancerPartie.scoreJoueur);
 		this.labelScore.setForeground(Color.white);

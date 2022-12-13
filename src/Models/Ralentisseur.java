@@ -5,11 +5,12 @@ public class Ralentisseur extends Case {
 	protected Ralentisseur(int coordHauteur, int coordLargeur) {
 		super(4, "Ralentisseur", coordHauteur, coordLargeur);
 	}
+	
 
 	@Override
 	public int getValeur() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.valeur;
 	}
 
 	@Override
@@ -26,7 +27,7 @@ public class Ralentisseur extends Case {
 
 	@Override
 	public void Collision(Serpent s) {
-		s.setVitesse(s.getVitesse()*50);
+		s.setVitesse((s.getVitesse()*2)-100);
 	}
 
 }

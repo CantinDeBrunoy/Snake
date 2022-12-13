@@ -1,9 +1,9 @@
 package Models;
 
-public class Sol extends Case  {
-	
-	public Sol(int coordHauteur,int coordLargeur) {
-		super(0, "Sol",coordHauteur,coordLargeur);
+public class Fosse extends Case{
+
+	protected Fosse(int coordHauteur, int coordLargeur) {
+		super(6, "Fosse", coordHauteur, coordLargeur);
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class Sol extends Case  {
 
 	@Override
 	public void Collision(Serpent s) {
-		// TODO Auto-generated method stub
-		
+		Jeu.LogiqueJeu.partieEnCours = false;
 	}
+
 }

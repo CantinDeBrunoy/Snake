@@ -23,29 +23,44 @@ public class PanelCarte extends JPanel{
 	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D)g.create();
+		
 		for(int i=0;i<this.carte.getHauteur();i++) {
 			for(int j=0;j<this.carte.getLargeur();j++) {
-				if(this.carte.matrice[i][j].getValeur()==0) {
-					if(i%2==0 && j%2==0 || i%2==1 && j%2==1) {
-						g2.setColor(new Color(118, 201, 143));						
-					}
-					else {
-						g2.setColor(new Color(170, 226, 187));						
-					}
+				int[]coordTriX={j*20,j*20+10,j*20+20};
+				int[]coordTriY={i*20+20,i*20,i*20+20};
+				
+				if(i%2==0 && j%2==0 || i%2==1 && j%2==1) {
+					g2.setColor(new Color(118, 201, 143));						
 				}
-				else if(this.carte.matrice[i][j].getValeur()==1) {
+				else {
+					g2.setColor(new Color(170, 226, 187));						
+				}
+				g2.fillRect(j*20, i*20, j*20+20, i*20+20);
+				
+				if(this.carte.matrice[i][j].getValeur()==1) {
 					g2.setColor(new Color(255, 174, 38));
+					g2.fillRect(j*20, i*20, j*20+20, i*20+20);
 				}
 				else if(this.carte.matrice[i][j].getValeur()==2) {
 					g2.setColor(new Color(23, 86, 104));
+					g2.fillOval(j*20, i*20, 20, 20);
 				}
 				else if(this.carte.matrice[i][j].getValeur()==3) {
 					g2.setColor(new Color(236, 23, 43));
+					g2.fillOval(j*20, i*20, 20, 20);
 				}
-				else {
+				else if(this.carte.matrice[i][j].getValeur()==4){
 					g2.setColor(new Color(181, 21, 121));
+					g2.fillPolygon(coordTriX, coordTriY, 3);
 				}
-				g2.fillRect(j*20, i*20, j*20+20, i*20+20);
+				else if(this.carte.matrice[i][j].getValeur()==5){
+					g2.setColor(new Color(255, 238, 69));
+					g2.fillPolygon(coordTriX, coordTriY, 3);
+				}
+				else if(this.carte.matrice[i][j].getValeur()==6) {
+					g2.setColor(new Color(55, 24, 8));
+					g2.fillRect(j*20, i*20, j*20+20, i*20+20);
+				}
 			}
 			
 		}

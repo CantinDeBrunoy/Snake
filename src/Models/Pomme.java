@@ -20,14 +20,12 @@ public class Pomme extends Case {
 
 	@Override
 	protected int getCoordLargeur() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.coordLargeur;
 	}
 
 	@Override
 	protected int getCoordHauteur() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.coordHauteur;
 	}
 
 }
