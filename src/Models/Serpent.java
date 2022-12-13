@@ -53,7 +53,7 @@ public class Serpent extends Case{
 	}
 	
 	private boolean horsCarte(int hauteur,int largeur) {
-		System.out.println("coord serpent: " + hauteur + " " + largeur);
+		//System.out.println("coord serpent: " + hauteur + " " + largeur);
 		if(hauteur<0 || largeur<0 || largeur>carte.getLargeur()-1 || hauteur>carte.getHauteur()-1) {
 			Jeu.LogiqueJeu.partieEnCours = false;
 			System.out.println("Game Over");

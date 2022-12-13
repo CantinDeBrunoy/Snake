@@ -36,7 +36,7 @@ public class Carte {
 		actualiserSerpent(serpent);
 		if(this.nombrePommes==0) {
 			Jeu.LancerPartie.indexNiveau+=1;
-			System.out.println("Ajout pommes");
+			//System.out.println("Ajout pommes");
 			ajoutPommes(indexNiveau);
 			ajoutBombes(indexNiveau);			
 		}

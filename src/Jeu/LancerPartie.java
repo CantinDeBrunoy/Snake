@@ -71,7 +71,7 @@ public class LancerPartie {
 			}
 			carte.actualiserMatrice(indexNiveau, this.serpent);
 			carte.setCase(arriereSerpent);
-			carte.afficherMatrice();
+			//carte.afficherMatrice();
 			panelJeu.repaint();
 			panelScore.repaint();
 			

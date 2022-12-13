@@ -36,25 +36,27 @@ public class PanelScore extends JPanel {
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D)g.create();
 		
-		g2.setColor(Color.black);
+		g2.setColor(Color.darkGray);
 		g2.fillRect(0, 0, 500, 200);
 		
-		g2.setColor(Color.white);
-		
 		this.labelScore = new JLabel("Votre score : " + scoreJoueur);
+		this.labelScore.setForeground(Color.white);
 		this.labelScore.setBounds(40,10,400,50);
 		this.add(labelScore);
 		
 		this.labelPomme = new JLabel("Nombre de pommes : " + this.carte.nombrePommes);
+		this.labelPomme.setForeground(Color.white);
 		this.labelPomme.setBounds(40,70,400,50);
 		this.add(labelPomme);
 		
 		this.labelBombe = new JLabel("Nombre de bombes : " + this.carte.nombreBombes);
+		this.labelBombe.setForeground(Color.white);
 		this.labelBombe.setBounds(40,140,400,50);
 		this.add(labelBombe);
 		
 		this.labelNiveau = new JLabel("Niveau : " + Jeu.LancerPartie.indexNiveau);
-		this.labelNiveau.setBounds(400,100,400,50);
+		this.labelNiveau.setForeground(Color.white);
+		this.labelNiveau.setBounds(400,140,400,50);
 		this.add(labelNiveau);
 		
 	}

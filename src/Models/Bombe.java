@@ -9,7 +9,7 @@ public class Bombe extends Case {
 	@Override
 	public void Collision(Serpent s) {
 		Jeu.LogiqueJeu.partieEnCours = false;
-		System.out.println("Collision avec une bombe");
+		//System.out.println("Collision avec une bombe");
 	}
 
 

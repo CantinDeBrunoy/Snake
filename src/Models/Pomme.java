@@ -10,7 +10,7 @@ public class Pomme extends Case {
 	public void Collision(Serpent s) {
 		s.ajouterElementSerpent();
 		Jeu.LancerPartie.scoreJoueur+=10*Jeu.LancerPartie.indexNiveau;
-		System.out.println("Croc");
+		//System.out.println("Croc");
 	}
 
 	@Override

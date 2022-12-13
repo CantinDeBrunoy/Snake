@@ -30,7 +30,7 @@ public class ElementSerpent extends Case{
 	@Override
 	public void Collision(Serpent s) {
 		Jeu.LogiqueJeu.partieEnCours = false;
-		System.out.println("Aie");
+		//System.out.println("Aie");
 	}
 
 }
