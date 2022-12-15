@@ -3,9 +3,9 @@ package Models;
 //lors de la collision de la case avec la tête du serpent, sa vitesse de déplacement est diminuée
 public class Ralentisseur extends Case {
 	//construction de l'objet aux coordonnées en argument
-	protected Accelerateur(int coordHauteur, int coordLargeur) {
+	protected Ralentisseur(int coordHauteur, int coordLargeur) {
 		//valeur de la case, nom de l'objet, coordonnée en y, coordonnée en x
-		super(4, "Accelerateur", coordHauteur, coordLargeur);
+		super(4, "Ralentisseur", coordHauteur, coordLargeur);
 	}
 	//implémentation des méthodes abstraites de la classe Case :
 	//getter de la valeur de la case

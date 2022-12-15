@@ -2,9 +2,9 @@ package Models;
 //déclaration d'une classe Sol qui extend la classe Case
 public class Sol extends Case  {
 	//construction de l'objet aux coordonnées en argument
-	protected Accelerateur(int coordHauteur, int coordLargeur) {
+	protected Sol(int coordHauteur, int coordLargeur) {
 		//valeur de la case, nom de l'objet, coordonnée en y, coordonnée en x
-		super(0, "Accelerateur", coordHauteur, coordLargeur);
+		super(0, "Sol", coordHauteur, coordLargeur);
 	}
 	//implémentation des méthodes abstraites de la classe Case :
 	//getter de la valeur de la case
