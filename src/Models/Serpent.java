@@ -2,7 +2,13 @@ package Models;
 //import de la bibliothèque pour gérer les listes chainées
 import java.util.LinkedList;
 //déclaration d'une classe Serpent qui extend la classe Case
-//contient toutes les méthodes relatives au comportement du serpent
+
+/**
+  * Model d'un serpent.
+  * contient toutes les méthodes relatives au comportement du serpent
+  * @param coordHauteur,coordLargeur,carte les coordonnées de la tete du serpent, la carte
+  */
+
 public class Serpent extends Case{
 	//objet contenant les informations de la carte
 	private Carte carte;
@@ -33,7 +39,11 @@ public class Serpent extends Case{
 		//attribution du dernier élément de la liste chainée
 		this.setArriereSerpent(this.getCorpsSerpent().getLast());
 	}
-	//méthode qui permet au serpent de grandir d'un élémentSerpent
+
+	/**
+	* méthode qui permet au serpent de grandir d'un élémentSerpent.
+	*/
+
 	public void ajouterElementSerpent() {
 		//ajout d'un nouvel objet elementSerpent à la fin de la liste chainée corpsSerpent
 		//ses coordonnées sont celles de la dernière case de la liste chainée corpsSerpent
@@ -41,7 +51,11 @@ public class Serpent extends Case{
 		//décrémentation du nombre de pommes présentes dans la matrice
 		this.carte.setNombrePommes(this.carte.getNombrePommes()-1);
 	}
-	//méthode qui permet d'afficher le serpent dans la console
+	
+	/**
+	* méthode qui permet d'afficher le serpent dans la console
+	*/
+
 	public void printCorpsSerpent() {
 		//pour tout les éléments de la liste chainées corpsSerpent
 		for(ElementSerpent s : this.corpsSerpent) {
@@ -49,7 +63,13 @@ public class Serpent extends Case{
 			System.out.println(s);
 		}
 	}
-	//méthode qui permet le déplacement du serpent dans la matrice
+
+	/**
+	* méthode qui permet le déplacement du serpent dans la matrice.
+	* @param coordLargeur,coordHauteur la valeur de la nouvelle case de la tete
+	*/
+
+	//
 	public void deplacementSerpent(int coordLargeur, int coordHauteur) {
 		//si le serpent n'est pas en dehors de la matrice
 		if(!horsCarte(coordHauteur,coordLargeur)) {
@@ -69,7 +89,12 @@ public class Serpent extends Case{
 			this.corpsSerpent.set(0, this.elementSerpent);			
 		}
 	}
-	//méthode qui gère les collisions avec les différentes cases
+
+	/**
+	* méthode qui permet d'appeler les méthodes collision des cases avec lesquels le serpent rentre en collision.
+	* @param hauteur,largeur les coordonnées de la case avec laquelle le serpent vient de rentrer en collision
+	*/
+
 	private void entreEnCollision(int hauteur,int largeur) {
 		//si la case aux coordonnées en arguments est différente d'une case Sol
 		if(carte.matrice[hauteur][largeur].getValeur() != 0) {
@@ -77,7 +102,12 @@ public class Serpent extends Case{
 			this.carte.matrice[hauteur][largeur].Collision(this);
 		}
 	}
-	//méthode qui gère le cas où le serpent sort de la matrice
+	/**
+	* méthode qui permet de savoir si le serpent est sortie de la carte.
+	* @param hauteur,largeur les coordonnées de la tete du serpent
+	* @return un boolean selon si le serpent est sortie de la zone de jeu ou non
+	*/
+
 	private boolean horsCarte(int hauteur,int largeur) {
 		//si l'une des coordonnées en arguments est plus petite que 0 ou plus grande que la taille de la carte - 1
 		if(hauteur<0 || largeur<0 || largeur>carte.getLargeur()-1 || hauteur>carte.getHauteur()-1) {

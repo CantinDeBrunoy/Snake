@@ -1,6 +1,12 @@
 package Models;
-//déclaration d'une classe Bombe qui extend la classe Case
-//lors de la collision de la case avec la tête du serpent la partie est perdue et donc terminée
+
+/**
+  * Model d'une bombe.
+  * Lorsque la bombe entre en collision avec le serpent la partie se termine
+  * @param coordHauteur,coordLargeur les coordonnées d'une bombe
+  */
+
+
 public class Bombe extends Case {
 	//construction de l'objet aux coordonnées en argument
 	protected Bombe(int coordHauteur, int coordLargeur) {
@@ -27,6 +33,14 @@ public class Bombe extends Case {
 		return this.coordHauteur;
 	}
 	//méthode appelée lors de la collision de la tête du serpent avec cette case
+
+	/**
+	* Collision est appele lorsque le serpent rentre en collision avec la case.
+	* dans ce cas alors la partie est terminée.
+	* @param s sepent
+	*/
+
+
 	@Override
 	public void Collision(Serpent s) {
 		//modification de la variable pour mettre fin à la partie

@@ -1,6 +1,11 @@
 package Models;
-//déclaration d'une classe Accelerateur qui extend la classe Case
-//lors de la collision de la case avec la tête du serpent, sa vitesse de déplacement est augmentée
+
+/**
+  * Model d'un Accelerateur.
+  * L'accelerateur est un bonus qui augmente la vitesse du serpent
+  * @param coordHauteur,coordLargeur les coordonnées de l'accelerateur
+  */
+
 public class Accelerateur extends Case{
 	//construction de l'objet aux coordonnées en argument
 	protected Accelerateur(int coordHauteur, int coordLargeur) {
@@ -27,6 +32,13 @@ public class Accelerateur extends Case{
 		return this.coordHauteur;
 	}
 	//méthode appelée lors de la collision de la tête du serpent avec cette case
+
+	/**
+	* Collision est appele lorsque le serpent rentre en collision avec la case.
+	* dans ce cas alors la vitesse du serpent est augmentée.
+	* @param s sepent
+	*/
+
 	@Override
 	public void Collision(Serpent s) {
 		//modification de la vitesse de déplacement du serpent : 

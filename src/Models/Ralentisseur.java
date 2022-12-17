@@ -1,6 +1,12 @@
 package Models;
-//déclaration d'une classe Ralentisseur qui extend la classe Case
-//lors de la collision de la case avec la tête du serpent, sa vitesse de déplacement est diminuée
+
+/**
+  * Model d'un Ralentisseur.
+  * Ce model est bonus
+  * lorsque le joueur entre en colision avec un ralentisseur alors le serpent est ralenti
+  * @param coordHauteur,coordLargeur les coordonnées du ralentisseur
+  */
+
 public class Ralentisseur extends Case {
 	//construction de l'objet aux coordonnées en argument
 	protected Ralentisseur(int coordHauteur, int coordLargeur) {
@@ -26,7 +32,13 @@ public class Ralentisseur extends Case {
 		//retourne l'entier qui défini la coordonnée en y
 		return this.coordHauteur;
 	}
-	//méthode appelée lors de la collision de la tête du serpent avec cette case
+	
+	/**
+	* Collision est appele lorsque le serpent rentre en collision avec le ralentisseur.
+	* dans ce cas alors sa vitesse est diminuée
+	* @param s sepent
+	*/
+
 	@Override
 	public void Collision(Serpent s) {
 		//modification de la vitesse de déplacement du serpent : 

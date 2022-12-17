@@ -9,8 +9,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Models.Carte;
-//déclaration d'une classe PanelCarte qui extends JPanel
-//affiche graphiquement le tableau de score de la partie
+/**
+  * déclaration d'une classe PanelScore qui extends JPanel
+  * affiche graphiquement le tableau de score de la partie
+  * @param carte,hauteur,largeur la carte, la hauteur et la largeur de la carte
+  */
+
 public class PanelScore extends JPanel {
 	//déclaration d'un objet carte
 	private Carte carte;
@@ -28,8 +32,14 @@ public class PanelScore extends JPanel {
 		this.setPreferredSize(new Dimension(hauteur,largeur));
 		this.setMinimumSize(new Dimension(hauteur,largeur));
 	}
-	//implémentation de la méthodes abstraites de la classe JPanel :
-	//permet l'affichage graphique de l'interface du jeu
+
+	/**
+	* implémentation de la méthodes paintComponent de la classe JPanel :
+	* permet l'affichage graphique de l'interface du jeu
+	* @param g de type Graphics qui permet de dessiner
+	*/
+
+
 	@Override
 	public void paintComponent(Graphics g) {
 		//déclaration d'un objet graphique

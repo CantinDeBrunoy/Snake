@@ -4,8 +4,13 @@ import java.awt.Dimension;
 import java.awt.Insets;
 
 import javax.swing.JFrame;
-//déclaration d'une classe Frame qui extends JFrame
-//affiche une fenêtre sur l'écran du joueur
+
+/**
+  * Views d'une Frame 
+  * Elle extends JFrame
+  * Creer une fenetre de jeu
+  */
+
 public class Frame extends JFrame{
     //création d'une méthode
     public Frame() {

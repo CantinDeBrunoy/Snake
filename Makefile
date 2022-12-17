@@ -14,6 +14,9 @@ CLASSES = \
 	src/Models/Bombe.java \
 	src/Models/Carte.java \
 	src/Models/Case.java \
+	src/Models/Accelerateur.java \
+	src/Models/Ralentisseur.java \
+	src/Models/Fosse.java \
 	src/Models/ElementSerpent.java \
 	src/Models/Pomme.java \
 	src/Models/Serpent.java \

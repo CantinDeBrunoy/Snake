@@ -1,8 +1,13 @@
 package Models;
-//déclaration d'une classe Carte
-//crée une matrice de Case Sol qui représente la carte de jeu
-//ajoute des cases Pomme et Bombe à des emplacements aléatoires dans la matrice à chaque niveau
-//ajoute éventuellement des bonus ou malus à des emplacements aléatoires dans la matrice à chaque niveau
+
+/**
+  * Model d'une carte.
+  * crée une matrice de Case Sol qui représente la carte de jeu
+  * ajoute des cases Pomme et Bombe à des emplacements aléatoires dans la matrice à chaque niveau
+  * ajoute éventuellement des bonus ou malus à des emplacements aléatoires dans la matrice à chaque niveau
+  * @param hauteur,largeur les dimensions de la carte
+  */
+
 public class Carte {
 	//déclaration de la matrice de Case
 	public Case[][] matrice;
@@ -39,6 +44,11 @@ public class Carte {
 		}
 	}
 	//méthode d'affichage de la matrice remplie dans la console
+
+	/**
+	* Methode permettant d'afficher la matrice dans la console.
+	*/
+
 	public void afficherMatrice() {
 		//parcours de la matrice en y
 		for(int i=0;i<this.hauteur;i++) {
@@ -51,8 +61,16 @@ public class Carte {
 		}
 		System.out.println("");
 	}
-	//méthode d'actualisation de la matrice pour le déplacement du serpent
-	//ajout de Pomme de Bombe ou de bonus dans la matrice en fonction du niveau
+
+	/**
+	* Méthode d'actualisation de la matrice.
+	* Elle actualise le serpent
+	* Elle actualise des cases si necessaires ( nouveau niveau ) en fonction du niveau
+	* @param indexNiveau,serpent l'index du niveau et le serpent
+	* @return la matrice
+
+	*/
+
 	public Case[][] actualiserMatrice(int indexNiveau, Serpent serpent) {
 		//appel de la méthode pour déplacer le serpent
 		actualiserSerpent(serpent);
@@ -71,6 +89,11 @@ public class Carte {
 		return this.matrice;
 	}
 	//méthode qui choisie aléatoirement quel bonus sera ajouté à la matrice
+
+	/**
+	* Methode qui permet de generer aléatoirement des bonus.
+	*/
+
 	private void selectionBonus() {
 		//déclaration d'une variable qu'on initialise au tirage aléatoire d'un nombre entier entre 0 et 100
 		int alea = (int)(Math.random() * 100);
@@ -98,6 +121,12 @@ public class Carte {
 		}
 	}
 	//méthode pour ajouter un bonus à la matrice
+
+	/**
+	* Methode qui permet d'ajouter aléatoirement des bonus.
+	* @param typeBonus le type de bonus qui doit etre generé
+	*/
+
 	private void ajoutBonus(int typeBonus) {
 		//déclaration d'une variable qui détermine si le bonus est ajouté à la matrice
 		//initialisation de la variable à faux
@@ -163,7 +192,12 @@ public class Carte {
 			}
 		}		
 	}
-	//méthode pour l'ajout de pommes dans la matrice en fonction du niveau
+	
+	/**
+	* Methode qui permet d'ajouter des pommes selon l'index du niveau.
+	* @param indexNiveau l'index du niveau
+	*/
+
 	public void ajoutPommes(int indexNiveau) {
 		//tant que le niveau de la partie est différent du nombre de pommes
 		while(indexNiveau!=this.nombrePommes) {
@@ -186,7 +220,12 @@ public class Carte {
 		}
 		
 	}
-	//méthode pour l'ajout de bombes dans la matrice en fonction du niveau
+	
+	/**
+	* Methode qui permet d'ajouter des bombes selon l'index du niveau.
+	* @param indexNiveau l'index du niveau
+	*/
+
 	public void ajoutBombes(int indexNiveau) {
 		//si le niveau de la partie - 1 est supérieur à 0
 		if(indexNiveau-1>0) {
@@ -214,7 +253,12 @@ public class Carte {
 			//System.out.println("Il n'y a pas de bombes a ce niveau");
 		}
 	}
-	//méthode pour actualiser la position de l'objet serpent dans la matrice
+	
+	/**
+	* Methode qui permet d'actualiser le serpent
+	* @param serpent serpent
+	*/
+
 	public void actualiserSerpent(Serpent serpent) {
 		//pour tout les objets ElementSerpent de la liste chainée corpsSerpent de l'objet Serpent
 		for(ElementSerpent s : serpent.getCorpsSerpent()) {

@@ -5,6 +5,13 @@ import java.awt.event.KeyListener;
 
 import Models.Serpent;
 
+/**
+  * Controller permettant de gerer les input utilisateur
+  * Ce controller implemente KeyListener
+  * seule la méthode keyPressed est overridé
+  * @param serpent le serpent
+  */
+
 public class InputJoueur implements KeyListener {
 
 	Serpent serpent;
@@ -18,6 +25,13 @@ public class InputJoueur implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 		// inutile dans notre cas
 	}
+
+	/**
+	* méthode de recuperer la touche pressé par l'utilisateur
+	* Cette méthode permet d'actualiser la direction du serpent si la touche pressé est une fleche directionnelle
+	* seule la méthode keyPressed est overridé
+	* @param e KeyEvent
+  	*/
 
 	@Override
 	public void keyPressed(KeyEvent e) {

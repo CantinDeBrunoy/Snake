@@ -1,6 +1,13 @@
 package Jeu;
 //déclaration d'une classe LogiqueJeu
 //détermine si la partie débute ou prend fin
+
+/**
+  * Logique du jeu.
+  * permet de gerer l'état de la partie
+  * @throws InterruptedException
+  */
+
 public class LogiqueJeu {
 	//déclaration d'une variable booléenne pour déterminer si la partie est en cours ou non
 	//initialisation à true, la partie est lancée

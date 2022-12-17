@@ -1,6 +1,12 @@
 package Models;
-//déclaration d'une classe Fosse qui extend la classe Case
-//lors de la collision de la case avec la tête du serpent la partie est perdue et donc terminée
+
+/**
+  * Model d'une Fosse.
+  * Ce model est bonus
+  * lorsque le joueur entre en colision avec la fosse alors la partie se termine
+  * @param coordHauteur,coordLargeur les coordonnées d'une fosse
+  */
+
 public class Fosse extends Case{
 	//construction de l'objet aux coordonnées en argument
 	protected Fosse(int coordHauteur, int coordLargeur) {
@@ -26,7 +32,13 @@ public class Fosse extends Case{
 		//retourne l'entier qui défini la coordonnée en y
 		return this.coordHauteur;
 	}
-	//méthode appelée lors de la collision de la tête du serpent avec cette case
+	
+	/**
+	* Collision est appele lorsque le serpent rentre en collision avec la fosse.
+	* dans ce cas alors la partie est terminée.
+	* @param s sepent
+	*/
+
 	@Override
 	public void Collision(Serpent s) {
 		//modification de la variable pour mettre fin à la partie

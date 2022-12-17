@@ -1,5 +1,11 @@
 package Models;
-//déclaration d'une classe Sol qui extend la classe Case
+
+/**
+  * Model d'un sol.
+  * @param coordHauteur,coordLargeur les coordonnées du sol
+  */
+
+
 public class Sol extends Case  {
 	//construction de l'objet aux coordonnées en argument
 	protected Sol(int coordHauteur, int coordLargeur) {
@@ -25,7 +31,13 @@ public class Sol extends Case  {
 		//retourne l'entier qui défini la coordonnée en y
 		return this.coordHauteur;
 	}
-	//méthode appelée lors de la collision de la tête du serpent avec cette case
+	
+	/**
+	* Collision est appele lorsque le serpent rentre en collision avec le sol.
+	* dans ce cas alors rien ne se passe.
+	* @param s sepent
+	*/
+
 	@Override
 	public void Collision(Serpent s) {
 		//aucun comportement spécifique

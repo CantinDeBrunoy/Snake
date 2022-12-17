@@ -10,6 +10,12 @@ import Views.Frame;
 import Views.PanelCarte;
 import Views.PanelScore;
 
+/**
+  * LancerPartie permet de soit lancer une partie soit afficher le gameOver.
+  * dans LancerPartie on va instancier la fenetre ainsi que les differents panels.
+  * on va également instancer certaines variable static comme le socre ansi que l'index du niveau
+  */
+
 public class LancerPartie {
 	//objet 
 	private Carte carte;
@@ -55,6 +61,12 @@ public class LancerPartie {
 		indexNiveau = 1;
 		scoreJoueur = 0;
 	}
+
+	/**
+		* Methode qui permet de lancer une partie.
+		* Une boucle de jeu est crée afin de gerer les different évènements du niveau ( comme la direction du serpent ou l'actualisation de la matrice de jeu)
+		* @throws InterruptedExceptio
+		*/
 
 	public void nouvellePartie() throws InterruptedException {
 		//boucle de jeu
@@ -102,7 +114,11 @@ public class LancerPartie {
 			Thread.sleep(serpent.getVitesse()-indexNiveau*6);
 		}
 	}
-	//déclaration de la méthode qui met fin à la partie
+
+	/**
+	* Méthode de fin de partie
+	* Commentaires détaillés sur le role de la methode
+	*/
 	public void finPartie() {
 		System.out.println("Game Over");
 		System.exit(-1);

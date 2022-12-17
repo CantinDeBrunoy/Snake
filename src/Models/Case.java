@@ -1,6 +1,11 @@
 package Models;
-//déclaration d'une classe abstraite Case
-//cette classe étends les classes Accelerateur, Bombe, ElementSerpent, Fosse, Pomme, Ralentisseur, Serpent et Sol
+
+/**
+  * Model d'une case.
+  * Tout les elements de la matrice de la carte héritent de case.
+  * @param valeur,nom,coordHauteur,coordLargeur la valeur, le nom,les coordonnées d'une case 
+  */
+
 public abstract class Case {
 	//déclaration des variables:
 	//variable de la hauteur de la carte
@@ -34,6 +39,11 @@ public abstract class Case {
 	protected abstract int getCoordLargeur();
 	//getter abstrait de l'entier qui défini la coordonnée en y de la case
 	protected abstract int getCoordHauteur();
-	//méthode abstraite qui définie le comportement adopté en cas de collision avec la tête du serpent
+	
+	/**
+	* Collision est appele lorsque le serpent rentre en collision avec la case.
+	* @param s sepent
+	*/
+
 	public abstract void Collision(Serpent s);
 }

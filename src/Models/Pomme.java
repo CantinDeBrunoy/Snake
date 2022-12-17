@@ -1,6 +1,11 @@
 package Models;
-//déclaration d'une classe Pomme qui extend la classe Case
-//lors de la collision de la case avec la tête du serpent celui-ci s'allonge d'une case
+
+/**
+  * Model d'une Pomme.
+  * lorsque le joueur entre en colision avec une pomme alors le serpent grandit.
+  * @param coordHauteur,coordLargeur les coordonnées d'une pomme
+  */
+
 public class Pomme extends Case {
 	//construction de l'objet aux coordonnées en argument
 	protected Pomme(int coordHauteur, int coordLargeur) {
@@ -26,7 +31,13 @@ public class Pomme extends Case {
 		//retourne l'entier qui défini la coordonnée en y
 		return this.coordHauteur;
 	}
-	//méthode appelée lors de la collision de la tête du serpent avec cette case
+	
+	/**
+	* Collision est appele lorsque le serpent rentre en collision avec la pomme.
+	* dans ce cas alors il grandit.
+	* @param s sepent
+	*/
+
 	@Override
 	public void Collision(Serpent s) {
 		//appel de la méthode pour faire grandir le serpent
