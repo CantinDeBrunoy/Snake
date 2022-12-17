@@ -12,8 +12,8 @@ Comment jouer au jeu :
 - manger des pommes (ronds rouge) pour faire grandir le serpent;
 
 Différentes façon de perdre la partie :
-- rentrer en contact avec une bombe (rond bleu foncé);
-- rentrer en contact avec la queue du serpent;
+- entrer en contact avec une bombe (rond bleu foncé);
+- entrer en contact avec la queue du serpent;
 - sortir de la carte;
 
 Crédits : François Mutti - Cantin Roquier
