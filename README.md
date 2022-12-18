@@ -14,6 +14,7 @@ Comment jouer au jeu :
 Différentes façon de perdre la partie :
 - entrer en contact avec une bombe (rond bleu foncé);
 - entrer en contact avec la queue du serpent;
+- entrer en contact avec un fossé
 - sortir de la carte;
 
 Crédits : François Mutti - Cantin Roquier
